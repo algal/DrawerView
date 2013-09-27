@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+// This class is subclasses just so it's easier to identify
+// the app class vs the component class in the Spark Inspector screenshot.
+
 @interface ALGInstrumentedView : UIView
 
 @end

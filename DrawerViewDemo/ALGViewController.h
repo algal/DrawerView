@@ -10,6 +10,9 @@
 
 #import "DrawerViewController.h"
 
+/*** 
+ This VC manages a scene of content, which the drawer appears above
+ */
 @interface ALGViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;

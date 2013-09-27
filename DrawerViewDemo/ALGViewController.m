@@ -22,6 +22,7 @@
 
 @implementation ALGViewController
 
+/// Returns an HTML string, used to initialize the DrawerViewController
 - (NSString*) htmlContents {
   NSString * const htmlFragment =
   @"<h1>Lorem Tortor Elit</h1>"
@@ -86,9 +87,9 @@
   PSLogDebug(@"entering");
   [super viewWillLayoutSubviews];
   
-  // want this to be called only on first-run,
-  // and not every time the parent V lays out its own subviews again,
-  // since we don't want it to change the position or size of the docked view.
+  // ideally want this to be called only on first-run,
+  // since after that the DrawerVC takes care of triggering its own
+  // layout events
   [self.drawerViewController layoutDrawerContainerOnly];
   PSLogDebug(@"exiting");
 }

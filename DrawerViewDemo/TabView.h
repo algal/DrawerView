@@ -6,7 +6,7 @@
 
 #import <UIKit/UIKit.h>
 /**
-  Draws a downward hanging "tab",
+  Draws a downward hanging "tab". Configurable.
  */
 
 @interface TabView : UIView

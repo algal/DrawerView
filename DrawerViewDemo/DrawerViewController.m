@@ -100,7 +100,6 @@ static inline CGFloat ALGCGPointEuclideanNorm(CGPoint point) {
   PSLogDebug(@"entering");
   [super awakeFromNib];
   
-//  UIColor * tk = [UIColor colorWithWhite:0.753 alpha:1.000];
   // setup default configurations
   self.drawerDockingEdge = CGRectMaxXEdge;
   self.isDragging = NO;
@@ -174,39 +173,6 @@ static inline CGFloat ALGCGPointEuclideanNorm(CGPoint point) {
   self.drawerRedockInfoOverlay.layer.cornerRadius = 12.f;
   PSLogDebug(@"exiting");
 }
-
-//-(void) viewWillAppear:(BOOL)animated {
-//  PSLogDebug(@"entering");
-//  [super viewWillAppear:animated];
-//
-////  [self layoutDrawerContainerOnly];
-//// parent VC or parent V is reponsible for laying out the drawer container
-//  
-////  [self layoutDrawerAsOpen:NO]; // should be called only on first-run
-//
-//  PSLogDebug(@"exiting");
-//}
-
-//-(void) viewDidLayoutSubviews
-//{
-//  PSLogDebug(@"entering");
-//  [super viewDidLayoutSubviews];
-//  PSLogDebug(@"exiting");
-//}
-
-//-(void)viewWillLayoutSubviews
-//{
-//  PSLogDebug(@"entering");
-//  [super viewWillLayoutSubviews];
-//  PSLogDebug(@"exiting");
-//}
-
-//-(void) viewDidAppear:(BOOL)animated {
-//  PSLogDebug(@"entering");
-//  [super viewDidAppear:animated];
-//  //  [self animatePeekOfDrawer];
-//  PSLogDebug(@"exiting");
-//}
 
 -(void)setDrawerDockingEdge:(CGRectEdge)drawerDockingEdge
 {
