@@ -1,0 +1,30 @@
+body {
+	font:15px/18px "helvetica neue", helvetica, sans-serif;
+  /*	color:#DCDEE0; */
+  /* 	color:#7D7D7D; */
+  /* color:#FFFFFF; */
+/*    color:white; */
+    padding-right:5px; /* to leave room for scrollers */
+}
+h1 {
+	font-size:20px;
+	line-height:24px;
+}
+h1 span, h1 em {
+	font-weight:normal;
+	font-style:normal;
+}
+h2 {
+	font-size:12px;
+	margin:10px 0 0 0;
+	text-transform:uppercase;
+}
+ol {
+	padding-left:22px;
+}
+li {
+	margin-bottom:10px;
+}
+p {
+	margin:0 0 20px 0;
+} 

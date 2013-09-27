@@ -1,0 +1,29 @@
+//
+// Prefix header for all source files of the 'DrawerViewDemo' target in the 'DrawerViewDemo' project
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_5_0
+#warning "This project uses features only available in iOS SDK 5.0 and later."
+#endif
+
+#ifdef __OBJC__
+  #import <UIKit/UIKit.h>
+  #import <Foundation/Foundation.h>
+#endif
+
+#import "PSLog.h"
+
+#define UIColorFromHex(hexValue,alphaValue) [UIColor \
+    colorWithRed:((float)((hexValue & 0xFF0000) >> 16))/255.0 \
+    green:((float)((hexValue & 0xFF00) >> 8))/255.0 \
+    blue:((float)(hexValue & 0xFF))/255.0 \
+    alpha:alphaValue]
+
+#define UIColorFromRGBA(redValue,greenValue,blueValue,alphaValue) [UIColor \
+    colorWithRed:(redValue)/255.0 \
+    green:(greenValue)/255.0 \
+    blue:(blueValue)/255.0 \
+    alpha:alphaValue]
+
