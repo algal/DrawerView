@@ -11,7 +11,7 @@ An iOS view for a "drawer" of HTML content, which lives above another view.
 
 Yes, there are plenty of drawer view components that let you slide away the main view to reveal a new view underneath, perhaps full of settings or navigation controls. This is not one of those components.
 
-This is for presenting a drawer "on top" of the current view, in way that appears clearly separate from it, does not block interaction with it, looks a bit pseudo-physical, and can be shift out of the way if necessary.
+This is for presenting a drawer "on top" of the current view, in way that appears clearly separate from it, does not block interaction with it, looks a bit pseudo-physical, and can be shifted out of the way if necessary.
 
 This is especially handy for the imperfect situation where you need to place contextual information _on top_ of unpredictable content that expects to own the whole screen (e.g., a webpage). So you need that contextual information to be convenient and available, but you also don't want to obtruct key bits of the underlying content -- even though you can't predict where the key bits will be.
 
@@ -19,7 +19,8 @@ This is especially handy for the imperfect situation where you need to place con
 
 User experience for this component:
 
-- clean presentation of HTML content (without UIWebView artefacts)
+- user can still interact with the view under the drawer
+- clean presentation of drawer's HTML content (no UIWebView artefacts)
 - when closed, the drawer exposes only a tab hanging onto the screen
 - tapping the tab opens/closes the drawer
 - dragging the tab allows gradually opening/closing the drawer
@@ -28,22 +29,22 @@ User experience for this component:
 
 Developer experience for this view:
 
-- Requires minimal integration with your code, since it's well-encapsulated as a child view controller. To use it, just add the ALGDrawerViewController as a child controller, and its root view onto the region that you want the drawer to fill.
+- Requires minimal integration with your code, since it's modularized as a child view controller. To use it, just add the ALGDrawerViewController as a child controller, and then add its root view onto the region that you want the open drawer to fill.
 - Extensively customizable via #define parameters
     - color, translucency, size, position, and corner radii of the drawer
     - corner radii and dimensions of the drawer's tab
     - animations on dock/undock
     - etc.
 
-To get a feel for what it looks like in action, just run the demo app.
+To get a sense for what it fels like, just run the demo app.
 
 **Requires at least iOS 6.**
 
 ## Installing it
 
-You add the drawer component to your app in the standard (and somewhat cumbersome) way you add any view managed by a dedicated child view controller (here's [Apple's advice](https://developer.apple.com/library/ios/featuredarticles/ViewControllerPGforiPhoneOS/CreatingCustomContainerViewControllers/CreatingCustomContainerViewControllers.html#//apple_ref/doc/uid/TP40007457-CH18-SW13)).
+You add the drawer component to your app in the standard (and admittedly cumbersome) way that Apple advises you add any view managed by a dedicated child view controller (here's [Apple's advice](https://developer.apple.com/library/ios/featuredarticles/ViewControllerPGforiPhoneOS/CreatingCustomContainerViewControllers/CreatingCustomContainerViewControllers.html#//apple_ref/doc/uid/TP40007457-CH18-SW13)).
 
-For instance, say you wanted to add a drawer on top of your the view MyView, which is managed MyViewController. First you would add a snippet like the following to your `viewDidLoad`, to cause the drawer component to be loaded as well:
+For instance, say you wanted to add a drawer on top of your the view ALGViewController's view. First you would add a snippet like the following to your `viewDidLoad`, to cause the drawer component to be loaded as well:
 
 
 ```
@@ -106,7 +107,7 @@ Second you would add a snippet like the following to your view's `layoutSubviews
 
 The drawer view hierarchy is managed by its own dedicated DrawerViewController. The DrawerViewController holds a reference to the hierarchy's root in a public property, drawerContainerView, which must be added to your app's view hierarchy.
 
-The drawerContainerView itself is just an invisible view, a which defines the region that the drawer should fill when the drawer is fully "open". When the drawer is closed, only its tab protrudes into that region. The drawerContainerView should be initially installed aligned to the inner edge of its superview, so that drawer slides in and out of that edge.
+The drawerContainerView itself is just an invisible container view, which defines the region that the drawer should fill when the drawer is fully "open". When the drawer is closed, only its tab protrudes into that region. The drawerContainerView should be initially installed aligned to the inner edge of its superview, so that drawer slides in and out of that edge.
 
 Really, a picture's worth a thousand words. This picture shows the view hierarchy when the drawer is slid out into the closed position:
 
@@ -120,12 +121,11 @@ And this one shows it open:
 <img src="./drawer_axonometric_open.png" width="90%"></img>
 </div>
 
-In both cases, the drawerContainerView is right-aligned with the content view.
+In both cases, the drawerContainerView is right-aligned with the content view. (Thanks to SparkInspector for the tool that enables these diagrams.)
 
 ##License
 
 See LICENSE.md
-
 
 ## Other drawers
 
